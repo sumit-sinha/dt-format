@@ -1,0 +1,30 @@
+{
+  "name": "dt-format",
+  "version": "1.0.0",
+  "description": "date formatter for javascript",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "ts-mocha src/**/*.test.ts"
+  },
+  "keywords": [
+    "date",
+    "javascript",
+    "utils"
+  ],
+  "author": "sumit.sinha",
+  "repository": "https://github.com/sumit-sinha/dt-format",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.4",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "ts-loader": "^4.4.2",
+    "ts-mocha": "^1.2.0",
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "typescript": "^2.9.2",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
