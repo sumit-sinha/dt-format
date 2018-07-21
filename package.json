@@ -2,8 +2,9 @@
   "name": "dt-format",
   "version": "1.0.0",
   "description": "date formatter for javascript",
-  "main": "src/index.ts",
+  "main": "build/index.js",
   "scripts": {
+    "build": "rm -rf build && tsc",
     "test": "ts-mocha src/**/*.test.ts"
   },
   "keywords": [
