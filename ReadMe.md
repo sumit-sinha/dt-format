@@ -68,3 +68,4 @@ import { DateTimeLocale } from 'dt-format';
 | English | en_GB |
 | French | fr_FR |
 | German | de_DE |
+| Simplified Chinese | zh_CN |
