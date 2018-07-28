@@ -69,3 +69,4 @@ import { DateTimeLocale } from 'dt-format';
 | French | fr_FR |
 | German | de_DE |
 | Simplified Chinese | zh_CN |
+| Russian | ru_RU |
