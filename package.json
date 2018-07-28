@@ -5,12 +5,18 @@
   "main": "build/index.js",
   "scripts": {
     "build": "rm -rf build && tsc",
+    "pre-commit": "npm test",
     "test": "ts-mocha src/**/*.test.ts"
   },
   "keywords": [
-    "date",
+    "datetime",
+    "locale",
     "javascript",
-    "utils"
+    "java-simpledateformat",
+    "date-format-english",
+    "date-format-french",
+    "date-format-german",
+    "date-format-spanish"
   ],
   "author": "sumit.sinha",
   "repository": "https://github.com/sumit-sinha/dt-format",
@@ -18,7 +24,9 @@
   "devDependencies": {
     "@types/chai": "^4.1.4",
     "@types/mocha": "^5.2.4",
+    "@types/node": "^10.5.4",
     "chai": "^4.1.2",
+    "husky": "^0.14.3",
     "mocha": "^5.2.0",
     "ts-loader": "^4.4.2",
     "ts-mocha": "^1.2.0",
@@ -27,5 +35,6 @@
     "typescript": "^2.9.2",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0"
-  }
+  },
+  "dependencies": {}
 }

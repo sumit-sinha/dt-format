@@ -1,5 +1,5 @@
 import { DateTimePattern } from './date.time.pattern';
-import { getLocalizedMonth, LocaleType, getLocalizedWeek } from './locale';
+import { getLocalizedMonth, LocaleType, getLocalizedWeek, getLocalizedTimeMarker } from './locale';
 
 enum DateTimeType {
   SHORT = 'short',
@@ -36,12 +36,13 @@ const POSSIBLE_PATTERNS = [
   DateTimePattern.SHORT_WEEK,
 ];
 
-const getWeek = (week: number, key: string) => getLocalizedWeek(LocaleType.en_GB)[`${week}`][key];
-const getMonth = (month: number, key: string) => getLocalizedMonth(LocaleType.en_GB)[`${month}`][key];
+const getDayTimeMarker = (locale: LocaleType, type: DayTimeMarker) => getLocalizedTimeMarker(locale)[type];
+const getWeek = (week: number, key: string, locale: LocaleType) => getLocalizedWeek(locale)[`${week}`][key];
+const getMonth = (month: number, key: string, locale: LocaleType) => getLocalizedMonth(locale)[`${month}`][key];
 const suffixWithZero = (value: number, comparator: number = 9) => value <= comparator ? `0${value}`: `${value}`;
 const calculateIn12HourFormat = (value: number) => value > 12 ? value - 12 : value;
 
-const getDateValue = (date: Date, pattern: DateTimePattern) => {
+const getDateValue = (date: Date, pattern: DateTimePattern, locale: LocaleType) => {
   switch (pattern) {
     case DateTimePattern.SHORT_DATE:
       return `${date.getDate()}`;
@@ -54,15 +55,15 @@ const getDateValue = (date: Date, pattern: DateTimePattern) => {
     case DateTimePattern.SHORT_MONTH:
       return suffixWithZero(date.getMonth() + 1);
     case DateTimePattern.MEDIUM_MONTH:
-      return getMonth(date.getMonth(), DateTimeType.SHORT);
+      return getMonth(date.getMonth(), DateTimeType.SHORT, locale);
     case DateTimePattern.FULL_MONTH:
-      return getMonth(date.getMonth(), DateTimeType.LONG);
+      return getMonth(date.getMonth(), DateTimeType.LONG, locale);
     case DateTimePattern.SHORT_WEEK:
       return suffixWithZero(date.getDay());
     case DateTimePattern.MEDIUM_WEEK:
-      return getWeek(date.getDay(), DateTimeType.SHORT);
+      return getWeek(date.getDay(), DateTimeType.SHORT, locale);
     case DateTimePattern.FULL_WEEK:
-      return getWeek(date.getDay(), DateTimeType.LONG);
+      return getWeek(date.getDay(), DateTimeType.LONG, locale);
     case DateTimePattern.FULL_MINUTE:
       return suffixWithZero(date.getMinutes());
     case DateTimePattern.SHORT_MINUTE:
@@ -86,18 +87,18 @@ const getDateValue = (date: Date, pattern: DateTimePattern) => {
     case DateTimePattern.FULL_MILLISECOND:
       return suffixWithZero(date.getMilliseconds(), 99);
     case DateTimePattern.AM_PM_MARKER:
-      return date.getHours() >= 12 ? DayTimeMarker.PM : DayTimeMarker.AM;
+      return date.getHours() >= 12 ? getDayTimeMarker(locale, DayTimeMarker.PM) : getDayTimeMarker(locale, DayTimeMarker.AM);
     default:
       return '';
   }
 }
 
 export class DateTimeFormat {
-  public static format(date: Date, pattern: string): string {
+  public static format(date: Date, pattern: string, locale: LocaleType = LocaleType.en_GB): string {
     let value = pattern;
     POSSIBLE_PATTERNS.forEach((possiblePattern: string) => {
       while (value.indexOf(possiblePattern) !== -1) {
-        value = value.replace(possiblePattern, getDateValue(date, possiblePattern as DateTimePattern));
+        value = value.replace(possiblePattern, getDateValue(date, possiblePattern as DateTimePattern, locale));
       }
     });
 

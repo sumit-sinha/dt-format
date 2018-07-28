@@ -1,20 +1,66 @@
 import { LocaleType } from './locale.type';
-import { MONTH_TEXT as EN_GB_MONTH_TEXT, WEEK_TEXT as EN_GB_WEEK_TEXT } from './en_GB';
+import {
+  MONTH_TEXT as en_GB_MONTH_TEXT,
+  WEEK_TEXT as en_GB_WEEK_TEXT,
+  TIME_MARKER as en_GB_TIME_MARKER
+} from './en_GB';
+import {
+  MONTH_TEXT as es_ES_MONTH_TEXT,
+  WEEK_TEXT as es_ES_WEEK_TEXT,
+  TIME_MARKER as es_ES_TIME_MARKER
+} from './es_ES';
+import {
+  MONTH_TEXT as fr_FR_MONTH_TEXT,
+  WEEK_TEXT as fr_FR_WEEK_TEXT,
+  TIME_MARKER as fr_FR_TIME_MARKER
+} from './fr_FR';
+import {
+  MONTH_TEXT as de_DE_MONTH_TEXT,
+  WEEK_TEXT as de_DE_WEEK_TEXT,
+  TIME_MARKER as de_DE_TIME_MARKER
+} from './de_DE';
 
-export const getLocalizedMonth = (locale: LocaleType) => {
+export const getLocalizedMonth = (locale: LocaleType = LocaleType.en_GB) => {
   switch (locale) {
     case LocaleType.en_GB:
-      return EN_GB_MONTH_TEXT;
+      return en_GB_MONTH_TEXT;
+    case LocaleType.es_ES:
+      return es_ES_MONTH_TEXT;
+    case LocaleType.fr_FR:
+      return fr_FR_MONTH_TEXT;
+    case LocaleType.de_DE:
+      return de_DE_MONTH_TEXT;
     default:
-      return {};
+      throw new Error(`Unsupported locale: ${locale}`);
   }
 }
 
-export const getLocalizedWeek = (locale: LocaleType) => {
+export const getLocalizedWeek = (locale: LocaleType = LocaleType.en_GB) => {
   switch (locale) {
     case LocaleType.en_GB:
-      return EN_GB_WEEK_TEXT;
+      return en_GB_WEEK_TEXT;
+    case LocaleType.es_ES:
+      return es_ES_WEEK_TEXT;
+    case LocaleType.fr_FR:
+      return fr_FR_WEEK_TEXT;
+    case LocaleType.de_DE:
+      return de_DE_WEEK_TEXT;
     default:
-      return {};
+      throw new Error(`Unsupported locale: ${locale}`);
+  }
+}
+
+export const getLocalizedTimeMarker = (locale: LocaleType = LocaleType.en_GB) => {
+  switch (locale) {
+    case LocaleType.en_GB:
+      return en_GB_TIME_MARKER;
+    case LocaleType.es_ES:
+      return es_ES_TIME_MARKER;
+    case LocaleType.fr_FR:
+      return fr_FR_TIME_MARKER;
+    case LocaleType.de_DE:
+      return de_DE_TIME_MARKER;
+    default:
+      throw new Error(`Unsupported locale: ${locale}`);
   }
 }
