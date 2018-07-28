@@ -24,6 +24,11 @@ import {
   WEEK_TEXT as zh_CN_WEEK_TEXT,
   TIME_MARKER as zh_CN_TIME_MARKER
 } from './zh_CN';
+import {
+  MONTH_TEXT as ru_RU_MONTH_TEXT,
+  WEEK_TEXT as ru_RU_WEEK_TEXT,
+  TIME_MARKER as ru_RU_TIME_MARKER
+} from './ru_RU';
 
 export const getLocalizedMonth = (locale: LocaleType = LocaleType.en_GB) => {
   switch (locale) {
@@ -37,6 +42,8 @@ export const getLocalizedMonth = (locale: LocaleType = LocaleType.en_GB) => {
       return de_DE_MONTH_TEXT;
     case LocaleType.zh_CN:
       return zh_CN_MONTH_TEXT;
+    case LocaleType.ru_RU:
+      return ru_RU_MONTH_TEXT;
     default:
       throw new Error(`Unsupported locale: ${locale}`);
   }
@@ -54,6 +61,8 @@ export const getLocalizedWeek = (locale: LocaleType = LocaleType.en_GB) => {
       return de_DE_WEEK_TEXT;
     case LocaleType.zh_CN:
       return zh_CN_WEEK_TEXT;
+    case LocaleType.ru_RU:
+      return ru_RU_WEEK_TEXT;
     default:
       throw new Error(`Unsupported locale: ${locale}`);
   }
@@ -71,6 +80,8 @@ export const getLocalizedTimeMarker = (locale: LocaleType = LocaleType.en_GB) =>
       return de_DE_TIME_MARKER;
     case LocaleType.zh_CN:
       return zh_CN_TIME_MARKER;
+    case LocaleType.ru_RU:
+      return ru_RU_TIME_MARKER;
     default:
       throw new Error(`Unsupported locale: ${locale}`);
   }

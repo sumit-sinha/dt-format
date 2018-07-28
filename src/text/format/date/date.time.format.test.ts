@@ -182,6 +182,11 @@ describe('Date Format', () => {
       expect(DateTimeFormat.format(dtAM, 'EEEE MMMM', LocaleType.zh_CN)).to.equal('星期五 七月');
     });
 
+    it('should support locale for russian language', () => {
+      const dtAM = new Date(2005, 6, 8, 0, 0, 0, 0);
+      expect(DateTimeFormat.format(dtAM, 'EEEE MMMM', LocaleType.ru_RU)).to.equal('пятница июля');
+    });
+
     it('should throw an exception if unsupported locale', () => {
       const dtAM = new Date(2005, 6, 8, 0, 0, 0, 0);
       try {

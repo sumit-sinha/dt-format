@@ -16,7 +16,9 @@
     "date-format-english",
     "date-format-french",
     "date-format-german",
-    "date-format-spanish"
+    "date-format-spanish",
+    "date-format-simplified-chinese",
+    "date-format-russian"
   ],
   "author": "sumit.sinha",
   "repository": "https://github.com/sumit-sinha/dt-format",

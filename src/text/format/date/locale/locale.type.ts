@@ -4,4 +4,5 @@ export enum LocaleType {
   fr_FR = 'fr_FR',
   de_DE = 'de_DE',
   zh_CN = 'zh_CN',
+  ru_RU = 'ru_RU',
 }
