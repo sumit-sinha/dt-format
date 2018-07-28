@@ -19,6 +19,11 @@ import {
   WEEK_TEXT as de_DE_WEEK_TEXT,
   TIME_MARKER as de_DE_TIME_MARKER
 } from './de_DE';
+import {
+  MONTH_TEXT as zh_CN_MONTH_TEXT,
+  WEEK_TEXT as zh_CN_WEEK_TEXT,
+  TIME_MARKER as zh_CN_TIME_MARKER
+} from './zh_CN';
 
 export const getLocalizedMonth = (locale: LocaleType = LocaleType.en_GB) => {
   switch (locale) {
@@ -30,6 +35,8 @@ export const getLocalizedMonth = (locale: LocaleType = LocaleType.en_GB) => {
       return fr_FR_MONTH_TEXT;
     case LocaleType.de_DE:
       return de_DE_MONTH_TEXT;
+    case LocaleType.zh_CN:
+      return zh_CN_MONTH_TEXT;
     default:
       throw new Error(`Unsupported locale: ${locale}`);
   }
@@ -45,6 +52,8 @@ export const getLocalizedWeek = (locale: LocaleType = LocaleType.en_GB) => {
       return fr_FR_WEEK_TEXT;
     case LocaleType.de_DE:
       return de_DE_WEEK_TEXT;
+    case LocaleType.zh_CN:
+      return zh_CN_WEEK_TEXT;
     default:
       throw new Error(`Unsupported locale: ${locale}`);
   }
@@ -60,6 +69,8 @@ export const getLocalizedTimeMarker = (locale: LocaleType = LocaleType.en_GB) =>
       return fr_FR_TIME_MARKER;
     case LocaleType.de_DE:
       return de_DE_TIME_MARKER;
+    case LocaleType.zh_CN:
+      return zh_CN_TIME_MARKER;
     default:
       throw new Error(`Unsupported locale: ${locale}`);
   }
