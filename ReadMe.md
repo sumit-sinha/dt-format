@@ -1,4 +1,4 @@
-# Date Time Formatter
+# Date Time Formatter [![Build Status](https://travis-ci.org/sumit-sinha/dt-format.png)](https://travis-ci.org/sumit-sinha/dt-format/)
 
 A utility class to format `Date` object in Javascript. It is heavily influenced by `SimpleDateFormat` class of Java and follow most of its specifications
 
