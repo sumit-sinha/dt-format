@@ -15,6 +15,8 @@
             "it"
         ]
     },
-    "rules": {},
+    "rules": {
+        "interface-name": false
+    },
     "rulesDirectory": []
 }

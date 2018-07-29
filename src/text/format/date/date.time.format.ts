@@ -1,5 +1,5 @@
 import { DateTimePattern } from './date.time.pattern';
-import { getLocalizedMonth, LocaleType, getLocalizedWeek, getLocalizedTimeMarker } from './locale';
+import { getLocalizedMonth, getLocalizedTimeMarker, getLocalizedWeek, LocaleType } from './locale';
 
 enum DateTimeType {
   SHORT = 'short',
@@ -36,10 +36,14 @@ const POSSIBLE_PATTERNS = [
   DateTimePattern.SHORT_WEEK,
 ];
 
-const getDayTimeMarker = (locale: LocaleType, type: DayTimeMarker) => getLocalizedTimeMarker(locale)[type];
-const getWeek = (week: number, key: string, locale: LocaleType) => getLocalizedWeek(locale)[`${week}`][key];
-const getMonth = (month: number, key: string, locale: LocaleType) => getLocalizedMonth(locale)[`${month}`][key];
-const suffixWithZero = (value: number, comparator: number = 9) => value <= comparator ? `0${value}`: `${value}`;
+const getDayTimeMarker =
+  (locale: LocaleType, type: DayTimeMarker) => getLocalizedTimeMarker(locale)[type];
+const getWeek =
+  (week: number, key: string, locale: LocaleType) => getLocalizedWeek(locale)[`${week}`][key];
+const getMonth =
+  (month: number, key: string, locale: LocaleType) => getLocalizedMonth(locale)[`${month}`][key];
+const suffixWithZero =
+  (value: number, comparator: number = 9) => value <= comparator ? `0${value}` : `${value}`;
 const calculateIn12HourFormat = (value: number) => value > 12 ? value - 12 : value;
 
 const getDateValue = (date: Date, pattern: DateTimePattern, locale: LocaleType) => {
@@ -87,18 +91,21 @@ const getDateValue = (date: Date, pattern: DateTimePattern, locale: LocaleType) 
     case DateTimePattern.FULL_MILLISECOND:
       return suffixWithZero(date.getMilliseconds(), 99);
     case DateTimePattern.AM_PM_MARKER:
-      return date.getHours() >= 12 ? getDayTimeMarker(locale, DayTimeMarker.PM) : getDayTimeMarker(locale, DayTimeMarker.AM);
+      return date.getHours() >= 12
+        ? getDayTimeMarker(locale, DayTimeMarker.PM)
+        : getDayTimeMarker(locale, DayTimeMarker.AM);
     default:
       return '';
   }
-}
+};
 
 export class DateTimeFormat {
   public static format(date: Date, pattern: string, locale: LocaleType = LocaleType.en_GB): string {
     let value = pattern;
     POSSIBLE_PATTERNS.forEach((possiblePattern: string) => {
       while (value.indexOf(possiblePattern) !== -1) {
-        value = value.replace(possiblePattern, getDateValue(date, possiblePattern as DateTimePattern, locale));
+        const dateValue = getDateValue(date, possiblePattern as DateTimePattern, locale);
+        value = value.replace(possiblePattern, dateValue);
       }
     });
 

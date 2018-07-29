@@ -1,51 +1,51 @@
 import { LocaleObject } from '../locale.object';
 
 export const MONTH_TEXT: LocaleObject = {
-  '0': {
+  0: {
     long: 'Janvier',
     short: 'Jan',
   },
-  '1': {
+  1: {
     long: 'Février',
     short: 'Fév',
   },
-  '2': {
+  2: {
     long: 'Mars',
     short: 'Mar',
   },
-  '3': {
+  3: {
     long: 'Avril',
     short: 'Avr',
   },
-  '4': {
+  4: {
     long: 'Mai',
     short: 'Mai',
   },
-  '5': {
+  5: {
     long: 'Juin',
     short: 'Jui',
   },
-  '6': {
+  6: {
     long: 'Juillet',
     short: 'Juil',
   },
-  '7': {
+  7: {
     long: 'Août',
     short: 'Aoû',
   },
-  '8': {
+  8: {
     long: 'Septembre',
     short: 'Sep',
   },
-  '9': {
+  9: {
     long: 'Octobre',
     short: 'Oct',
   },
-  '10': {
+  10: {
     long: 'Novembre',
     short: 'Nov',
   },
-  '11': {
+  11: {
     long: 'Décembre',
     short: 'Déc',
   },
