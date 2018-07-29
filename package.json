@@ -5,7 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "build": "rm -rf build && tsc",
-    "precommit": "npm test",
+    "lint": "tslint src/**/*.ts --project tsconfig.json",
+    "precommit": "npm run lint && npm test",
     "test": "ts-mocha src/**/*.test.ts"
   },
   "keywords": [
