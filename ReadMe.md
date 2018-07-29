@@ -16,14 +16,14 @@ You can import the `DateTimeFormat` class and use it as shown below
 
 ```javascript
 const pattern = 'dd/MMM/yyyy';
-console.info(MessageFormat.format(new Date(), pattern)); // 21/Jul/2018
+console.info(DateFormat.format(new Date(), pattern)); // 21/Jul/2018
 ```
 
 ### Localization
 
 ```javascript
 const pattern = 'dd/MMMM/yyyy';
-console.info(MessageFormat.format(new Date(), pattern, DateTimeLocale.de_DE)); // 21/Juli/2018
+console.info(DateFormat.format(new Date(), pattern, DateTimeLocale.de_DE)); // 21/Juli/2018
 ```
 
 **Note**: If third argument is not passed then default value for locale is set to `en_GB`
