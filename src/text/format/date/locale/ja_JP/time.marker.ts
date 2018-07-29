@@ -1,6 +1,6 @@
 import { LocaleObject } from '../locale.object';
 
 export const TIME_MARKER: LocaleObject = {
-  AM: 'ص',
-  PM: 'م',
+  AM: '午前',
+  PM: '午後',
 };
