@@ -1,6 +1,6 @@
 {
   "name": "dt-format",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "date formatter for javascript",
   "main": "build/index.js",
   "scripts": {
