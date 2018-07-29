@@ -34,6 +34,11 @@ import {
   WEEK_TEXT as ar_SA_WEEK_TEXT,
   TIME_MARKER as ar_SA_TIME_MARKER
 } from './ar_SA';
+import {
+  MONTH_TEXT as ja_JP_MONTH_TEXT,
+  WEEK_TEXT as ja_JP_WEEK_TEXT,
+  TIME_MARKER as ja_JP_TIME_MARKER
+} from './ja_JP';
 
 export const getLocalizedMonth = (locale: LocaleType = LocaleType.en_GB) => {
   switch (locale) {
@@ -51,6 +56,8 @@ export const getLocalizedMonth = (locale: LocaleType = LocaleType.en_GB) => {
       return ru_RU_MONTH_TEXT;
     case LocaleType.ar_SA:
       return ar_SA_MONTH_TEXT;
+    case LocaleType.ja_JP:
+      return ja_JP_MONTH_TEXT;
     default:
       throw new Error(`Unsupported locale: ${locale}`);
   }
@@ -72,6 +79,8 @@ export const getLocalizedWeek = (locale: LocaleType = LocaleType.en_GB) => {
       return ru_RU_WEEK_TEXT;
     case LocaleType.ar_SA:
       return ar_SA_WEEK_TEXT;
+    case LocaleType.ja_JP:
+      return ja_JP_WEEK_TEXT;
     default:
       throw new Error(`Unsupported locale: ${locale}`);
   }
@@ -93,6 +102,8 @@ export const getLocalizedTimeMarker = (locale: LocaleType = LocaleType.en_GB) =>
       return ru_RU_TIME_MARKER;
     case LocaleType.ar_SA:
       return ar_SA_TIME_MARKER;
+    case LocaleType.ja_JP:
+      return ja_JP_TIME_MARKER;
     default:
       throw new Error(`Unsupported locale: ${locale}`);
   }

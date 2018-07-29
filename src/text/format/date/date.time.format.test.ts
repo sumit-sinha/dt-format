@@ -192,6 +192,11 @@ describe('Date Format', () => {
       expect(DateTimeFormat.format(dtAM, 'EEEE MMMM', LocaleType.ar_SA)).to.equal('الجمعة يوليو');
     }); 
 
+    it('should support locale for japanese language', () => {
+      const dtAM = new Date(2005, 6, 8, 0, 0, 0, 0);
+      expect(DateTimeFormat.format(dtAM, 'EEEE MMMM', LocaleType.ja_JP)).to.equal('金曜日 7月');
+    });
+
     it('should throw an exception if unsupported locale', () => {
       const dtAM = new Date(2005, 6, 8, 0, 0, 0, 0);
       try {

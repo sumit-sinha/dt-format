@@ -6,4 +6,5 @@ export enum LocaleType {
   zh_CN = 'zh_CN',
   ru_RU = 'ru_RU',
   ar_SA = 'ar_SA',
+  ja_JP = 'ja_JP',
 }
