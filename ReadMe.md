@@ -70,3 +70,5 @@ import { DateTimeLocale } from 'dt-format';
 | German | de_DE |
 | Simplified Chinese | zh_CN |
 | Russian | ru_RU |
+| Arabic | ar_SA |
+| Japanese | ja_JP |
