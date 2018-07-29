@@ -1,5 +1,5 @@
 import { LocaleObject } from '../locale.object';
-,, , , , , 
+ 
 export const WEEK_TEXT: LocaleObject = {
   '1': {
     long: '月曜日',
