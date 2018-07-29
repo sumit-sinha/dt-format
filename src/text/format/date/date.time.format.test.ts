@@ -59,10 +59,13 @@ describe('Date Format', () => {
       expect(DateTimeFormat.format(dt, 'EEE')).to.equal('Wed');
     });
 
-    it('should replace "EEEE" with current day in week as full text i.e Monday, Tuesday etc', () => {
-      const dt = new Date(2005, 5, 1, 0, 0, 0, 0);
-      expect(DateTimeFormat.format(dt, 'EEEE')).to.equal('Wednesday');
-    });
+    it(
+      'should replace "EEEE" with current day in week as full text i.e Monday, Tuesday etc',
+      () => {
+        const dt = new Date(2005, 5, 1, 0, 0, 0, 0);
+        expect(DateTimeFormat.format(dt, 'EEEE')).to.equal('Wednesday');
+      },
+    );
 
     it('should convert "EEEE, dd MMMM yyyy" with respective date value', () => {
       const dt = new Date(2005, 5, 1, 0, 0, 0, 0);
@@ -97,16 +100,19 @@ describe('Date Format', () => {
       expect(DateTimeFormat.format(dt, 'HH')).to.equal('08');
     });
 
-    it('should replace "hh" with hour in 12 hour format, if hour is between 0-9 then add 0 as suffix', () => {
-      const dt16 = new Date(2005, 5, 1, 16, 9, 0, 0);
-      expect(DateTimeFormat.format(dt16, 'hh')).to.equal('04');
+    it(
+      'should replace "hh" with hour in 12 hour format, if hour is between 0-9 then add 0 as suffix', // tslint:disable-line max-line-length
+      () => {
+        const dt16 = new Date(2005, 5, 1, 16, 9, 0, 0);
+        expect(DateTimeFormat.format(dt16, 'hh')).to.equal('04');
 
-      const dt5 = new Date(2005, 5, 1, 5, 9, 0, 0);
-      expect(DateTimeFormat.format(dt5, 'hh')).to.equal('05');
+        const dt5 = new Date(2005, 5, 1, 5, 9, 0, 0);
+        expect(DateTimeFormat.format(dt5, 'hh')).to.equal('05');
 
-      const dt11 = new Date(2005, 5, 1, 11, 9, 0, 0);
-      expect(DateTimeFormat.format(dt11, 'hh')).to.equal('11');
-    });
+        const dt11 = new Date(2005, 5, 1, 11, 9, 0, 0);
+        expect(DateTimeFormat.format(dt11, 'hh')).to.equal('11');
+      },
+    );
 
     it('should replace "s" with second', () => {
       const dt = new Date(2005, 5, 1, 16, 9, 25, 0);
@@ -128,19 +134,21 @@ describe('Date Format', () => {
       expect(DateTimeFormat.format(dt, 'S')).to.equal('816');
     });
 
-    it('should replace "SS" with milliseconds, if second is between 0-9 then add 0 as suffix', () => {
+    it('should replace "SS" with milliseconds, if second is between 0-9 then add 0 as suffix', () => {  // tslint:disable-line max-line-length
       const dt = new Date(2005, 5, 1, 16, 9, 25, 9);
       expect(DateTimeFormat.format(dt, 'SS')).to.equal('09');
     });
 
-    it('should replace "SSS" with milliseconds, if second is between 0-99 then add 0 as suffix', () => {
+    it('should replace "SSS" with milliseconds, if second is between 0-99 then add 0 as suffix', () => {  // tslint:disable-line max-line-length
       const dt = new Date(2005, 5, 1, 16, 9, 25, 59);
       expect(DateTimeFormat.format(dt, 'SSS')).to.equal('059');
     });
 
     it('should replace "EEEE, dd MMMM yyyy HH:mm:ss.SSS" with respective date time value', () => {
       const dt = new Date(2005, 5, 1, 16, 9, 25, 771);
-      expect(DateTimeFormat.format(dt, 'EEEE, dd MMMM yyyy HH:mm:ss.SSS')).to.equal('Wednesday, 01 June 2005 16:09:25.771');
+      expect(DateTimeFormat.format(dt, 'EEEE, dd MMMM yyyy HH:mm:ss.SSS'))
+        .to
+        .equal('Wednesday, 01 June 2005 16:09:25.771');
     });
 
     it('should replace "hh:mm:ss a" with respective time and AM/PM indicator', () => {
@@ -164,7 +172,9 @@ describe('Date Format', () => {
 
     it('should support locale for french language', () => {
       const dtAM = new Date(2005, 6, 8, 0, 0, 0, 0);
-      expect(DateTimeFormat.format(dtAM, 'EEEE MMMM', LocaleType.fr_FR)).to.equal('Vendredi Juillet');
+      expect(DateTimeFormat.format(dtAM, 'EEEE MMMM', LocaleType.fr_FR))
+        .to
+        .equal('Vendredi Juillet');
     });
 
     it('should support locale for german language', () => {
@@ -190,7 +200,7 @@ describe('Date Format', () => {
     it('should support locale for arabic language', () => {
       const dtAM = new Date(2005, 6, 8, 0, 0, 0, 0);
       expect(DateTimeFormat.format(dtAM, 'EEEE MMMM', LocaleType.ar_SA)).to.equal('الجمعة يوليو');
-    }); 
+    });
 
     it('should support locale for japanese language', () => {
       const dtAM = new Date(2005, 6, 8, 0, 0, 0, 0);
