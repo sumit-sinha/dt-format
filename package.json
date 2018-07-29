@@ -1,11 +1,11 @@
 {
   "name": "dt-format",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "date formatter for javascript",
   "main": "build/index.js",
   "scripts": {
     "build": "rm -rf build && tsc",
-    "pre-commit": "npm test",
+    "precommit": "npm test",
     "test": "ts-mocha src/**/*.test.ts"
   },
   "keywords": [
